@@ -23,7 +23,7 @@ function Newsletter() {
             className="p-4 w-full max-w-lg rounded-full border dark:bg-[#222222] dark:border-gray-600 border-gray-300 focus:outline-none pr-20" 
           />
           <button 
-            className="absolute right-36 top-1/2 transform -translate-y-1/2 bg-[#D1EC79] text-black px-4 py-2 rounded-full hover:bg-[#b8d865] flex items-center"
+            className="absolute right-2 md:right-36 top-1/2 transform -translate-y-1/2 bg-[#D1EC79] text-black px-4 py-2 rounded-full hover:bg-[#b8d865] flex items-center"
           >
             {'Subscribe'} <IoMdArrowForward className="ml-2" />
           </button>

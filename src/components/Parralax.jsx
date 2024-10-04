@@ -18,8 +18,8 @@ function ParallaxSection() {
           {'Learn from industry professionals and gain hands-on experience to kickstart your career. Our programs are designed to give you real-world skills that employers value.'}
         </p>
         <a href="/courses" 
-           className="z-10  bg-[#D1EC79] text-black px-6 py-3 rounded-full hover:bg-[#b8d865] w-2/5 justify-center flex items-center mx-auto font-inter font-semibold gap-2 shadow-lg">
-          {'Explore Our Courses'} <MdArrowOutward />
+           className="z-10  bg-[#D1EC79] text-black px-6 py-3 rounded-full hover:bg-[#b8d865] w-3/5 md:w-2/5 justify-center flex items-center mx-auto font-inter font-semibold gap-2 shadow-lg">
+          {'Explore Courses'} <MdArrowOutward />
         </a>
       </div>
     </div>
