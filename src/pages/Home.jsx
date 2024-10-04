@@ -6,6 +6,7 @@ import WhyChooseUs from '../components/WhyChooseUs'
 import Testimonial from '../components/Testimonial'
 import ParallaxSection from '../components/Parralax'
 import Newsletter from '../components/Newsletter'
+import Footer from '../components/Footer'
 
 
 function Home() {
@@ -31,6 +32,9 @@ function Home() {
         </div>
         <div >
           <Newsletter />
+        </div>
+        <div>
+          <Footer />
         </div>
        
        
