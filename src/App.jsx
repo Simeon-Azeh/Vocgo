@@ -7,6 +7,7 @@ import './routes/i18n'; // Import i18n configuration
 import Home from './pages/Home';
 import Login from './pages/Authentication/Login';
 import Register from './pages/Authentication/Register';
+import ForgotPassword from './pages/Authentication/ForgotPassword';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -33,6 +34,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="*" element={<Home />} />
       
       </Routes>
