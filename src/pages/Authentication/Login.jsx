@@ -52,7 +52,7 @@ function Login() {
           </p>
         </div>
 
-        <form className="mt-8 space-y-6 " onSubmit={handleLogin} noValidate>
+        <form className="mt-8 space-y-6 font-inter" onSubmit={handleLogin} noValidate>
           <div className="rounded-md shadow-sm ">
             <div>
               <label htmlFor="email" className="sr-only">{t('Email address')}</label>
@@ -121,14 +121,14 @@ function Login() {
           <div>
             <button
               type="submit"
-              className="group relative w-full flex justify-center py-3 px-6 border border-transparent text-sm font-medium rounded-md text-white bg-[#D1EC79] hover:bg-[#b8d865] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#D1EC79] mb-2"
+              className="group relative w-full flex justify-center py-3 px-6 border border-transparent text-sm font-medium rounded-md text-white bg-[#D1EC79] hover:bg-[#b8d865] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#D1EC79] mb-4"
             >
               {t('Login')}
             </button>
-
+                    <p>OR</p>
             <button
               type="submit"
-              className="text-black flex items-center w-full border text-center rounded justify-center py-2 font-medium gap-2"
+              className="text-black flex items-center w-full border text-center rounded justify-center py-2 font-medium gap-2 mt-2"
             >
                 <FcGoogle size={24} />
               {t('Continue with Google')}
