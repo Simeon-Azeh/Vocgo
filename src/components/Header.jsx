@@ -103,7 +103,7 @@ function Header() {
               Français
             </Option>
           </Select>
-          <button className='bg-[#1a1a1a] text-white flex items-center gap-2 px-4 py-2 rounded-full '><FaUser size={21} className='bg-[#D1EC79] p-1 rounded-full text-black'/> Login</button>
+          <Link to='login' className='bg-[#1a1a1a] text-white flex items-center gap-2 px-4 py-2 rounded-full '><FaUser size={21} className='bg-[#D1EC79] p-1 rounded-full text-black'/> Login</Link>
         </div>
         <div className="md:hidden flex items-center space-x-4">
           <Select 

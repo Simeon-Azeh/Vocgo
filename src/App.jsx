@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 import './routes/i18n'; // Import i18n configuration
 import Home from './pages/Home';
+import Login from './pages/Authentication/Login';
+import Register from './pages/Authentication/Register';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -29,6 +31,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="*" element={<Home />} />
       
       </Routes>
