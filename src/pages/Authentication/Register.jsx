@@ -153,7 +153,7 @@ function Register() {
             </button>
             <button
               type="submit"
-              className="text-black flex items-center w-full border text-center rounded justify-center py-2 font-medium gap-2"
+              className="text-black flex items-center w-full border text-center rounded justify-center py-2 font-medium gap-2 mt-4"
             >
                 <FcGoogle size={24} />
               {t('Continue with Google')}

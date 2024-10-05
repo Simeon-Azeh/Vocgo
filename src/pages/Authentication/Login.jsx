@@ -125,7 +125,7 @@ function Login() {
             >
               {t('Login')}
             </button>
-                    <p>OR</p>
+                  
             <button
               type="submit"
               className="text-black flex items-center w-full border text-center rounded justify-center py-2 font-medium gap-2 mt-2"
