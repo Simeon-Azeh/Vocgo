@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; // useNavigate replaces useHistory
-import { FaHome, FaUserGraduate, FaBook, FaCog, FaBars, FaSignOutAlt } from 'react-icons/fa';
+import { FaHome, FaUserGraduate, FaBook, FaCog, FaBars, FaBriefcase, FaSignOutAlt } from 'react-icons/fa';
 import { RiMenuFold4Line } from "react-icons/ri";
 
 function Sidebar() {
@@ -23,7 +23,7 @@ function Sidebar() {
         onClick={toggleSidebar} 
         className="block lg:hidden p-4 text-white bg-white"
       >
-        <RiMenuFold4Line size={30} className='text-gray-700' />
+        <RiMenuFold4Line size={34} className='text-gray-700' />
       </button>
 
       {/* Sidebar */}
@@ -44,19 +44,19 @@ function Sidebar() {
                 </Link>
               </li>
               <li className="p-4 hover:bg-gray-50">
-                <Link to="/dashboard/courses" className="flex items-center">
+                <Link to="/courses" className="flex items-center">
                   <FaBook className="mr-3" />
                   Courses
                 </Link>
               </li>
               <li className="p-4 hover:bg-gray-50">
-                <Link to="/dashboard/students" className="flex items-center">
-                  <FaUserGraduate className="mr-3" />
-                  Students
-                </Link>
+              <Link to="/jobs" className="flex items-center">
+                <FaBriefcase className="mr-3" />
+                Jobs
+              </Link>
               </li>
               <li className="p-4 hover:bg-gray-50">
-                <Link to="/dashboard/settings" className="flex items-center">
+                <Link to="/settings" className="flex items-center">
                   <FaCog className="mr-3" />
                   Settings
                 </Link>

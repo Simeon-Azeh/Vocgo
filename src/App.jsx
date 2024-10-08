@@ -9,6 +9,7 @@ import Login from './pages/Authentication/Login';
 import Register from './pages/Authentication/Register';
 import ForgotPassword from './pages/Authentication/ForgotPassword';
 import Dashboard from './pages/dashboard';
+import Courses from './pages/Courses';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -38,6 +39,7 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="*" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/courses" element={<Courses />} />
       </Routes>
     </BrowserRouter>
   );
