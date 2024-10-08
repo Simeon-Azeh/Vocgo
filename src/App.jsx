@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Login from './pages/Authentication/Login';
 import Register from './pages/Authentication/Register';
 import ForgotPassword from './pages/Authentication/ForgotPassword';
+import Dashboard from './pages/dashboard';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -36,7 +37,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="*" element={<Home />} />
-      
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );
