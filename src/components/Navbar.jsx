@@ -31,7 +31,7 @@ function Navbar() {
       </div>
 
       {/* Right: Icons and Profile */}
-      <div className="flex items-center space-x-4 relative ml-8 md:ml-0">
+      <div className="flex items-center space-x-4 relative ml-4 md:ml-0">
         {/* Language Toggle */}
         <button onClick={toggleLanguage} className="flex items-center space-x-2 text-gray-400">
           <MdOutlineLanguage size={20} />
