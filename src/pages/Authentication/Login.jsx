@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { FcGoogle } from "react-icons/fc";
 import Footer from '../../components/Footer';
 import { login } from '../../services/apiService'; // Import the login function
+import Loader from '../../components/Loader/Loader'; // Import the Loader component
 
 function Login() {
   const { t } = useTranslation();
@@ -13,6 +14,7 @@ function Login() {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
   const [apiError, setApiError] = useState('');
+  const [loading, setLoading] = useState(false); // State to manage loading
 
   const validateForm = () => {
     let formErrors = {};
@@ -39,6 +41,7 @@ function Login() {
     e.preventDefault();
     
     if (validateForm()) {
+      setLoading(true); // Show loader
       try {
         const data = await login(email, password);
         if (data.token) {
@@ -46,13 +49,16 @@ function Login() {
           navigate('/dashboard'); // Redirect to dashboard
         }
       } catch (error) {
-        setApiError(error.error || 'Invalid Crefentials');
+        setApiError(error.error || 'Invalid Credentials');
+      } finally {
+        setLoading(false); // Hide loader
       }
     }
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#f9f9f9f9] dark:bg-dark-body transition-colors py-12 px-4 sm:px-6 lg:px-8 font-inter">
+      {loading && <Loader />} {/* Show loader when loading */}
       <div className="w-full max-w-md p-6 space-y-8 bg-white rounded-md">
         <div>
           <h2 className="mt-6 text-3xl font-semibold text-center text-gray-900 dark:text-slate-50 font-montserrat-alt">

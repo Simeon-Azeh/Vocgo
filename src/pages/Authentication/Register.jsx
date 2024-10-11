@@ -4,6 +4,7 @@ import { FaUser, FaLock, FaEnvelope } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import { FcGoogle } from "react-icons/fc";
 import { register } from '../../services/apiService'; // Import the register function
+import Loader from '../../components/Loader/Loader'; // Import the Loader component
 
 function Register() {
   const { t } = useTranslation();
@@ -16,6 +17,7 @@ function Register() {
   });
   const [errors, setErrors] = useState({});
   const [apiError, setApiError] = useState('');
+  const [loading, setLoading] = useState(false); // State to manage loading
 
   const validateForm = () => {
     let formErrors = {};
@@ -48,6 +50,7 @@ function Register() {
     e.preventDefault();
 
     if (validateForm()) {
+      setLoading(true); // Show loader
       try {
         const data = await register(
           formData.username,
@@ -68,12 +71,15 @@ function Register() {
         } else {
           setApiError(error.message || 'Registration failed');
         }
+      } finally {
+        setLoading(false); // Hide loader
       }
     }
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#f9f9f9] dark:bg-dark-body transition-colors py-12 px-4 sm:px-6 lg:px-8 font-inter">
+      {loading && <Loader />} {/* Show loader when loading */}
       <div className="w-full max-w-md p-6 space-y-8 bg-white rounded-md">
         <div>
           <h2 className="text-3xl font-semibold text-center text-gray-900 dark:text-slate-50 font-montserrat-alt">
