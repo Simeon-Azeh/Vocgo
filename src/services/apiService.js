@@ -28,3 +28,18 @@ export const register = async (username, email, password, confirmPassword) => {
 export const logout = () => {
     localStorage.removeItem('token');
 };
+
+export const forgotPassword = async (email) => {
+    try {
+      const response = await axios.post(`${API_URL}/forgot-password`, {
+        email,
+      });
+      return response.data;
+    } catch (error) {
+      if (error.response && error.response.data) {
+        throw new Error(error.response.data.message || 'An error occurred');
+      } else {
+        throw new Error('An error occurred');
+      }
+    }
+};
