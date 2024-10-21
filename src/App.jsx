@@ -10,8 +10,7 @@ import Register from './pages/Authentication/Register';
 import ForgotPassword from './pages/Authentication/ForgotPassword';
 import Dashboard from './pages/dashboard';
 import Courses from './pages/Courses';
-import PrivateRoute from './components/PrivateRoute';
-import AuthRedirect from './components/AuthRedirect';
+// import PrivateRoute from './components/PrivateRoute'; 
 import GoogleCallback from './components/GoogleCallback';
 
 function ScrollToTop() {
@@ -40,25 +39,26 @@ function App() {
         <Route
           path="/login"
           element={
-            <AuthRedirect>
+            // <AuthRedirect>
               <Login />
-            </AuthRedirect>
+            // </AuthRedirect>
           }
         />
         <Route
           path="/register"
           element={
-            <AuthRedirect>
+            // <AuthRedirect>
               <Register />
-            </AuthRedirect>
+            // </AuthRedirect>
           }
         />
         <Route path="/auth/callback" element={<GoogleCallback />} /> {/* Handle Google callback */}
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="*" element={<Home />} />
-        <Route path="/dashboard" element={<PrivateRoute />}>
+        {/* Comment out PrivateRoute */}
+        {/* <Route path="/dashboard" element={<PrivateRoute />}> */}
           <Route path="/dashboard" element={<Dashboard />} />
-        </Route>
+        {/* </Route> */}
         <Route path="/courses" element={<Courses />} />
       </Routes>
     </BrowserRouter>
