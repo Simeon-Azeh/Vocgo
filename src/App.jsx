@@ -9,6 +9,7 @@ import Login from './pages/Authentication/Login';
 import Register from './pages/Authentication/Register';
 import ForgotPassword from './pages/Authentication/ForgotPassword';
 import Dashboard from './pages/dashboard';
+import Enrollment from './pages/Enrollment';
 import Courses from './pages/Courses';
 // import PrivateRoute from './components/PrivateRoute'; 
 import GoogleCallback from './components/GoogleCallback';
@@ -60,6 +61,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
         {/* </Route> */}
         <Route path="/courses" element={<Courses />} />
+        <Route path="/enroll/:title" element={<Enrollment />} />
       </Routes>
     </BrowserRouter>
   );

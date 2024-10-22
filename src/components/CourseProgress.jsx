@@ -6,9 +6,9 @@ const CourseProgress = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const courses = [
-    { title: 'Plumbing 101', progress: 80 },
+    { title: 'Graphic design 101', progress: 80 },
     { title: 'Electrician Basics', progress: 45 },
-    { title: 'Carpentry Workshop', progress: 20 },
+    { title: 'Baking', progress: 20 },
   ];
 
   const toggleDropdown = (index) => {

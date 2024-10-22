@@ -22,7 +22,7 @@ const activities = [
   {
     id: 3,
     icon: <FaWrench className="text-orange-500" />,
-    activity: 'Registered for "Welding Workshop"',
+    activity: 'Registered for "Baking Workshop"',
     date: 'October 16, 2024',
     time: '1:00 PM',
     link: '/workshops/welding',

@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom'; // Import Link for navigation
 const UpcomingEvents = () => {
   const events = [
     { 
-      name: 'Welding Workshop', 
+      name: 'Baking Workshop', 
       date: 'Oct 25, 2024',
       link: '/events/welding-workshop' // Link to event details
     },
     { 
-      name: 'Plumbing Materclass', 
+      name: 'Graphic Design Materclass', 
       date: 'Nov 1, 2024',
       link: '/events/plumbing-course' // Link to event details
     },

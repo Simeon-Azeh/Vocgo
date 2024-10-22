@@ -4,12 +4,12 @@ import { FaDownload } from 'react-icons/fa'; // Import download icon
 const Certifications = () => {
   const certifications = [
     { 
-      title: 'Certified Welder', 
+      title: 'Certified Tailor', 
       date: 'Oct 15, 2024',
       file: 'certified-welder.pdf' // Mock file name for download
     },
     { 
-      title: 'Plumbing Level 1', 
+      title: 'Resin Craft Level 1', 
       date: 'Sep 10, 2024',
       file: 'plumbing-level-1.pdf' // Mock file name for download
     },
