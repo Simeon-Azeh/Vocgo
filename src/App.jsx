@@ -13,6 +13,9 @@ import Enrollment from './pages/Enrollment';
 import Courses from './pages/Courses';
 // import PrivateRoute from './components/PrivateRoute'; 
 import GoogleCallback from './components/GoogleCallback';
+import Jobs from './pages/Jobs';
+import JobApplicationForm from './pages/JobApplicationForm';
+import JobDetails from './pages/JobDetails';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -62,6 +65,9 @@ function App() {
         {/* </Route> */}
         <Route path="/courses" element={<Courses />} />
         <Route path="/enroll/:title" element={<Enrollment />} />
+        <Route path="/jobs" element={<Jobs />} />
+        <Route path="/jobs/:jobId" element={<JobDetails />} />
+        <Route path="/jobs/:jobId/apply" element={<JobApplicationForm />} />
       </Routes>
     </BrowserRouter>
   );

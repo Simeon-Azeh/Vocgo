@@ -21,7 +21,7 @@ function SearchBar({ onSearch, onCategoryChange }) {
       <div className="relative w-full md:w-1/3">
         <input 
           type="text" 
-          placeholder="Search courses..." 
+          placeholder="Search..." 
           className="w-full p-2 pl-10 rounded-md border border-gray-300 focus:outline-none bg-white focus:ring-1 focus:ring-[#D1EC79]"
           onChange={(e) => onSearch(e.target.value)}
         />
