@@ -86,13 +86,13 @@ function Navbar() {
 
         {/* Notification Icon with Badge */}
         <div className="relative">
-          <button className="relative flex items-center space-x-2 text-gray-400">
+          <Link to='/notifications' className="relative flex items-center space-x-2 text-gray-400">
             <IoIosNotificationsOutline size={32} />
             {/* Notification Badge */}
             <span className="absolute top-0 right-0 h-4 w-4 bg-[#D1EC79] rounded-full flex items-center justify-center text-xs text-gray-700 font-inter">
               3
             </span>
-          </button>
+          </Link>
         </div>
 
         {/* Profile Picture with Dropdown */}

@@ -16,6 +16,9 @@ import GoogleCallback from './components/GoogleCallback';
 import Jobs from './pages/Jobs';
 import JobApplicationForm from './pages/JobApplicationForm';
 import JobDetails from './pages/JobDetails';
+import Settings from './pages/Settings';
+import Profile from './pages/Profile';
+import Notifications from './pages/Notifications';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -68,6 +71,9 @@ function App() {
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/jobs/:jobId" element={<JobDetails />} />
         <Route path="/jobs/:jobId/apply" element={<JobApplicationForm />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/notifications" element={<Notifications />} />
       </Routes>
     </BrowserRouter>
   );
