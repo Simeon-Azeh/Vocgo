@@ -64,7 +64,7 @@ const Notifications = () => {
               {notifications.map((notification) => (
                 <li
                   key={notification.id}
-                  className={`p-4 bg-white text-gray-500  rounded-md flex justify-between items-center cursor-pointer ${
+                  className={`p-4 bg-white text-gray-500  rounded-md flex justify-between items-center cursor-pointer text-sm md:text-lg ${
                     notification.isRead ? 'opacity-50' : ''
                   }`}
                   onClick={() => openModal(notification)}
@@ -73,7 +73,7 @@ const Notifications = () => {
                   <div className="flex items-center space-x-4">
                     {!notification.isRead && (
                       <button
-                        className="text-[#8cd836] hover:text-[#6ca424] flex items-center gap-1"
+                        className="text-[#8cd836] hover:text-[#6ca424] flex items-center gap-1 text-xs md:text-lg"
                         onClick={(e) => {
                           e.stopPropagation();
                           markAsRead(notification.id);
@@ -89,7 +89,7 @@ const Notifications = () => {
                         deleteNotification(notification.id);
                       }}
                     >
-                      <FaTrashAlt size={18} /> Delete
+                      <FaTrashAlt size={18} /> 
                     </button>
                   </div>
                 </li>
