@@ -3,10 +3,12 @@ import { useParams, Link } from 'react-router-dom';
 import { GoArrowLeft } from "react-icons/go";
 
 function JobApplicationForm() {
+
+  const user = JSON.parse(localStorage.getItem('user'));
   const { jobId } = useParams();
   const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
+    fullName: user.name,
+    email: user.email,
     resume: null,
     linkedin: ''
   });
@@ -26,12 +28,12 @@ function JobApplicationForm() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto bg-white p-6 font-inter mt-8 rounded">
+    <div className="max-w-2xl p-6 mx-auto mt-8 bg-white rounded font-inter">
         <Link className='flex items-center gap-2 mb-4 text-gray-800' to='/jobs'>
        <GoArrowLeft />
        Go back
        </Link>
-      <h2 className="text-2xl font-semibold mb-4 text-gray-800">Apply for Job ID: {jobId}</h2>
+      <h2 className="mb-4 text-2xl font-semibold text-gray-800">Apply for Job ID: {jobId}</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block mb-1 text-gray-700">Full Name</label>
@@ -40,7 +42,7 @@ function JobApplicationForm() {
             name="fullName" 
             value={formData.fullName} 
             onChange={handleChange} 
-            className="w-full p-2 border border-gray-300 rounded bg-white"
+            className="w-full p-2 bg-white border border-gray-300 rounded"
             required
           />
         </div>
@@ -51,7 +53,7 @@ function JobApplicationForm() {
             name="email" 
             value={formData.email} 
             onChange={handleChange} 
-            className="w-full p-2 border border-gray-300 rounded bg-white"
+            className="w-full p-2 bg-white border border-gray-300 rounded"
             required
           />
         </div>
@@ -72,7 +74,7 @@ function JobApplicationForm() {
             name="linkedin" 
             value={formData.linkedin} 
             onChange={handleChange} 
-            className="w-full p-2 border border-gray-300 rounded bg-white"
+            className="w-full p-2 bg-white border border-gray-300 rounded"
           />
         </div>
         <button 
