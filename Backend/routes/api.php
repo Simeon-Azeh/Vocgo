@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\JobApplicationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
@@ -16,7 +17,12 @@ Route::post('/logout', [AuthController::class, 'logout']);
 
 Route::get('/user', [AuthController::class, 'deleteUser']);
 
-// Add these routes for password reset
+Route::middleware('auth:api')->post('/update-profile-picture', [AuthController::class, 'updateProfilePicture']);
+Route::group(["middleware" => ["auth:api"]], function (){
+    Route::get('/jobs', [JobApplicationController::class, 'index']);
+    Route::get('/jobs/{id}', [JobApplicationController::class, 'show']);
+});
+
 Route::get('/password/reset/{token}', function ($token) {
     return view('auth.passwords.reset', ['token' => $token]);
 })->name('password.reset');

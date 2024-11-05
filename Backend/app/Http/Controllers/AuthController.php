@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterUserRequest;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -143,4 +144,33 @@ class AuthController extends Controller
 
         return response()->json(['message' => 'User deleted successfully'], 200);
     }
+    public function updateProfilePicture(Request $request): JsonResponse
+    {
+        $request->validate([
+            'profile_picture' => 'required|image|mimes:jpg,jpeg,png|max:2048', // max 2MB
+        ]);
+
+        $user = Auth::user();
+
+        // Delete the old profile picture if it exists
+        if ($user->profile_picture) {
+            Storage::disk('public')->delete($user->profile_picture);
+        }
+
+        // Store the new profile picture
+        if ($request->hasFile('profile_picture')) {
+            $file = $request->file('profile_picture');
+            $path = $file->store('profile_pictures', 'public');
+
+            // Save the new path to the user's profile picture
+            $user->profile_picture = $path;
+            $user->save();
+        }
+
+        return response()->json([
+            'success' => 'Profile picture updated successfully',
+            'profile_picture_url' => asset('storage/' . $user->profile_picture)
+        ], 200);
+    }
+
 }

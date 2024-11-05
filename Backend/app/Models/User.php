@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
@@ -20,6 +21,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'profile_picture',
         'password',
     ];
 
@@ -45,4 +47,13 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function getProfilePictureUrlAttribute(): string|null
+    {
+        return $this->profile_picture ? asset('storage/' . $this->profile_picture) : null;
+    }
+
+    public function user_job_applications(): HasMany {
+        return $this->hasMany(UserJobApplication::class);
+    }
+
 }
